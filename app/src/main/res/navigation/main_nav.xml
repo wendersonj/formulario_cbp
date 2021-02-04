@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/primeiraEtapa">
+
+    <fragment
+        android:id="@+id/segundaEtapa"
+        android:name="com.service.cbp.segundaEtapa"
+        android:label="fragment_segunda_etapa"
+        tools:layout="@layout/fragment_segunda_etapa" >
+        <action
+            android:id="@+id/action_segundaEtapa_to_primeiraEtapa"
+            app:destination="@id/primeiraEtapa" />
+    </fragment>
+    <fragment
+        android:id="@+id/primeiraEtapa"
+        android:name="com.service.cbp.primeiraEtapa"
+        android:label="fragment_primeira_etapa"
+        tools:layout="@layout/fragment_primeira_etapa" >
+        <action
+            android:id="@+id/action_primeiraEtapa_to_segundaEtapa"
+            app:destination="@id/segundaEtapa" />
+    </fragment>
+    <fragment
+        android:id="@+id/terceiraEtapa"
+        android:name="com.service.cbp.TerceiraEtapa"
+        android:label="fragment_terceira_etapa"
+        tools:layout="@layout/fragment_terceira_etapa" />
+</navigation>

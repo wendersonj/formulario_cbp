@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".segundaEtapa">
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2A ETAPA"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2AAAA"
+            >
+        </com.google.android.material.textview.MaterialTextView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_primEt_numPedido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="HINT"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:padding="20dp"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/primeiraEtapa_numPedido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_primEt_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="HINT2"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:padding="20dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/primeiraEtapa_data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textField_primEt_nomeAnalista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="HINT3"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:padding="20dp"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/primeiraEtapa_nomeAnalista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/segundaEtapa_botaoVoltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_gravity="start"
+
+            />
+
+            <Button
+                android:id="@+id/segundaEtapa_botaoContinuar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Continuar"
+                style="@style/Widget.MaterialComponents.Button"
+                android:layout_gravity="end"
+                />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
