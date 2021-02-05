@@ -2,9 +2,9 @@ name: Create Release
 
 on :
   pull_request:
-    branches: [master]
   push:
-    branches: [master]
+    branches:
+     - master
 
 
 jobs:
@@ -12,11 +12,21 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    #using https://github.com/anothrNick/github-tag-action
+
     steps:
       - uses: actions/checkout@v2
+      with:
+        fetch-depth: '0'
 
       - name: Make Gradlew Executable
         run: chmod +x ./gradlew
+
+      - name: Bump version and push tag
+        uses: anothrNick/github-tag-action@1.26.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WITH_V: true
 
       - name: Create Release
         id: create_release
