@@ -1,4 +1,4 @@
-name: Android Build
+name: Android Build and Release APK
 
 on :
   merge:
@@ -26,6 +26,13 @@ jobs:
      #- name: Run Tests
      #  run: ./gradlew test
 
+     - name: Build Project [Debug]
+       run: ./gradlew app:assembleDebug --stacktrace       # Building project
 
-     - name: Build Project
-       run: ./gradlew assemble
+     - name: Upload and Release APK 
+       uses: actions/upload-artifact@v2-preview            # This action will upload a build apk you can then test.
+       with:
+        name: app
+        path: app/build/outputs/apk/debug/app-debug.apk   # Path to the build app.
+
+     
