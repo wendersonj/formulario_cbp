@@ -1,0 +1,39 @@
+name: Android Build and Release APK
+
+on :
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build and Release APK
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v1
+
+      - name: Setup JDK
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+
+      - name: Make Gradlew Executable
+        run: chmod +x ./gradlew
+
+      #- name: Run Tests
+      #  run: ./gradlew test
+
+      - name: Build Project [Debug]
+        env:
+          VERSION_CODE: ${{ github.run_id }}
+        run: ./gradlew app:assembleDebug --stacktrace       # Building project
+
+      - name: Upload and Release APK
+        uses: actions/upload-artifact@v2-preview            # This action will upload a build apk you can then test.
+        with:
+          name: app-${{ github.run_id }}
+          path: app/build/outputs/apk/debug/app-debug.apk   # Path to the build app.
+
+
