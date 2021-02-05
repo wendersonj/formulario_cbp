@@ -1,6 +1,7 @@
 name: Android Build
 
 on :
+  merge:
   pull_request:
     branches:
       - master
