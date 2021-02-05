@@ -18,9 +18,15 @@ class segundaEtapa : Fragment() {
         // TODO mudar o find by ID para binding
         val view =  inflater.inflate(R.layout.fragment_segunda_etapa, container, false)
 
-        val botaoVoltar = view.findViewById<Button>(R.id.segundaEtapa_botaoVoltar)
-        botaoVoltar.setOnClickListener {
+        val btnVoltar = view.findViewById<Button>(R.id.segundaEtapa_botaoVoltar)
+        btnVoltar.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_segundaEtapa_to_primeiraEtapa)
+        }
+
+
+        val btnContinuar = view.findViewById<Button>(R.id.segundaEtapa_botaoContinuar)
+        btnContinuar.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_segundaEtapa_to_terceiraEtapa)
         }
 
         return view

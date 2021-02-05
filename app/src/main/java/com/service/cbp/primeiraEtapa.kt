@@ -16,14 +16,16 @@ class primeiraEtapa : Fragment() {
         // Inflate the layout for this fragment
 
         // TODO mudar o find by ID para binding
-        val view =  inflater.inflate(R.layout.fragment_primeira_etapa, container, false)
+        return  inflater.inflate(R.layout.fragment_primeira_etapa, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         val botaoContinuar = view.findViewById<Button>(R.id.primeiraEtapa_botaoContinuar)
         botaoContinuar.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_primeiraEtapa_to_segundaEtapa)
         }
 
-        return view
     }
 
 }

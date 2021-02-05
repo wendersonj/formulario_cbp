@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_segundaEtapa_to_primeiraEtapa"
             app:destination="@id/primeiraEtapa" />
+        <action
+            android:id="@+id/action_segundaEtapa_to_terceiraEtapa"
+            app:destination="@id/terceiraEtapa" />
     </fragment>
     <fragment
         android:id="@+id/primeiraEtapa"
@@ -27,5 +30,9 @@
         android:id="@+id/terceiraEtapa"
         android:name="com.service.cbp.TerceiraEtapa"
         android:label="fragment_terceira_etapa"
-        tools:layout="@layout/fragment_terceira_etapa" />
+        tools:layout="@layout/fragment_terceira_etapa" >
+        <action
+            android:id="@+id/action_terceiraEtapa_to_segundaEtapa"
+            app:destination="@id/segundaEtapa" />
+    </fragment>
 </navigation>
